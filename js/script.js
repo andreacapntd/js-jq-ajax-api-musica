@@ -11,8 +11,6 @@ function getDiscMusic() {
     method: 'GET',
     success: function(data) {
 
-
-
       var success = data['success'];
       var values = data['response'];
 
@@ -26,19 +24,14 @@ function getDiscMusic() {
 
         showDiscMusic(cover, cdTitle, artist, year)
 
-
-
-
-
-
-      }
+      };
     },
     error: function() {
 
       console.log('error');
     }
-  })
-}
+  });
+};
 
 
 function showDiscMusic(cover, cdTitle, artist, year) {
@@ -56,28 +49,9 @@ function showDiscMusic(cover, cdTitle, artist, year) {
 
   });
 
-  target.append(areaHTML)
-
+  target.append(areaHTML);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function init() {
@@ -85,8 +59,6 @@ function init() {
   getDiscMusic();
 
 };
-
-
 
 
 
