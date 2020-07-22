@@ -11,6 +11,8 @@ function getDiscMusic() {
     method: 'GET',
     success: function(data) {
 
+
+
       var success = data['success'];
       var values = data['response'];
 
@@ -21,24 +23,13 @@ function getDiscMusic() {
         var artist = values[i]['author'];
         var year = values[i]['year'];
 
-        if (values.length == 10) {
 
-          var template = $('#template').html();
-          var compiled = Handlebars.compile(template);
-          var target = $('.cds-container');
+        showDiscMusic(cover, cdTitle, artist, year)
 
-          var areaHTML = compiled({
 
-            'cover' : cover,
-            'cdTitle' : cdTitle,
-            'artist' : artist,
-            'year' : year
 
-          });
 
-          target.append(areaHTML)
-          console.log('ok');
-        }
+
 
       }
     },
@@ -50,7 +41,25 @@ function getDiscMusic() {
 }
 
 
+function showDiscMusic(cover, cdTitle, artist, year) {
 
+  var template = $('#template').html();
+  var compiled = Handlebars.compile(template);
+  var target = $('.cds-container');
+
+  var areaHTML = compiled({
+
+    'cover' : cover,
+    'cdTitle' : cdTitle,
+    'artist' : artist,
+    'year' : year
+
+  });
+
+  target.append(areaHTML)
+
+
+}
 
 
 
