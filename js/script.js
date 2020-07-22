@@ -20,6 +20,26 @@ function getDiscMusic() {
         var cdTitle = values[i]['title'];
         var artist = values[i]['author'];
         var year = values[i]['year'];
+
+        if (values.length == 10) {
+
+          var template = $('#template').html();
+          var compiled = Handlebars.compile(template);
+          var target = $('.cds-container');
+
+          var areaHTML = compiled({
+
+            'cover' : cover,
+            'cdTitle' : cdTitle,
+            'artist' : artist,
+            'year' : year
+
+          });
+
+          target.append(areaHTML)
+          console.log('ok');
+        }
+
       }
     },
     error: function() {
